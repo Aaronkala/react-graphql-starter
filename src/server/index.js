@@ -3,8 +3,8 @@ const graphqlHTTP = require('express-graphql');
 const ql = require('./graphql');
 
 const app = express();
-app.use(express.static('dist'));
-app.use(
+app.use('/', express.static('build'));
+app.all(
   '/api',
   graphqlHTTP({
     schema: ql.schema,
@@ -12,4 +12,4 @@ app.use(
     graphiql: true,
   }),
 );
-app.listen(4000, () => console.log('Now browse to localhost:4000/graphql'));
+app.listen(4000, () => console.log('Now browse to localhost:4000/api'));
