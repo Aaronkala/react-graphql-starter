@@ -1,26 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider, Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { username: null };
-  }
+const client = new ApolloClient({
+  uri: '/api',
+});
 
-  componentDidMount() {
-    fetch('/api', { method: 'POST', body: { query: '{hello}' } }).then(res =>
-      console.log(res),
-    );
-  }
+export default function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Query
+        query={gql`
+          {
+            hello
+          }
+        `}
+      >
+        {({ loading, error, data }) => {
+          if (loading) return <p>Loading...</p>;
+          if (error) return <p>Error :(</p>;
 
-  render() {
-    return (
-      <div>
-        {this.state.username ? (
-          <h1>Hello {this.state.username}</h1>
-        ) : (
-          <h1>Loading.. please wait!</h1>
-        )}
-      </div>
-    );
-  }
+          return <h1>{data.hello}</h1>;
+        }}
+      </Query>
+    </ApolloProvider>
+  );
 }
