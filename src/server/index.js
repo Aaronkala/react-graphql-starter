@@ -8,6 +8,7 @@ app.all(
   '/api',
   graphqlHTTP({
     schema: ql.schema,
+    mutation: ql.mutation,
     rootValue: ql.root,
     graphiql: true,
   }),

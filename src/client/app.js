@@ -1,7 +1,8 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
-import { ApolloProvider, Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { ApolloProvider } from 'react-apollo';
+
+import AddTodo from './components/addTodo';
 
 const client = new ApolloClient({
   uri: '/api',
@@ -10,20 +11,10 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <Query
-        query={gql`
-          {
-            hello
-          }
-        `}
-      >
-        {({ loading, error, data }) => {
-          if (loading) return <p>Loading...</p>;
-          if (error) return <p>Error :(</p>;
-
-          return <h1>{data.hello}</h1>;
-        }}
-      </Query>
+      <div>
+        <h1>Start</h1>
+        <AddTodo />
+      </div>
     </ApolloProvider>
   );
 }

@@ -8,6 +8,7 @@
     "linebreak-style": ["error", "windows"],
     "no-console": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "arrow-parens": "off"
   }
 }

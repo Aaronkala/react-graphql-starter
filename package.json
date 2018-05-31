@@ -4,9 +4,11 @@
   "description": "",
   "main": "src/server/index.js",
   "scripts": {
+    "error": "webpack --display-error-details --mode development",
     "start": "node src/server/index.js",
     "build": "webpack --mode production",
-    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "client":
+      "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
