@@ -30,7 +30,7 @@ const H1 = styled.h1`
     left: -1em;
     height: 0.8em;
     width: 5.7em;
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${p => p.theme.colors.alert};
   }
 `;
 

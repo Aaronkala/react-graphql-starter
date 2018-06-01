@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import Header from '../components/header';
 import Todos from '../components/todos';
@@ -12,8 +13,15 @@ export default class Home extends Component {
     return (
       <div>
         <Header />
-        <Todos />
+        <Container>
+          <Todos />
+        </Container>
       </div>
     );
   }
 }
+
+const Container = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
+`;

@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import Todo from './todo';
+
+const LOAD_TODOS = gql`
+  {
+    todos {
+      value
+      id
+    }
+  }
+`;
 
 export default class Todos extends Component {
   constructor(props) {
@@ -9,30 +21,20 @@ export default class Todos extends Component {
   render() {
     return (
       <Container>
-        <h2>h2 header</h2>
-        <p>
-          p - long paragraph of p text just to test out font size and make
-          iterations to it. This will greatly affect the look and feel of the
-          application so it is super importatnt to get right.
-        </p>
-        <h3>h3 header</h3>
-        <p>
-          p - long paragraph of p text just to test out font size and make
-          iterations to it. This will greatly affect the look and feel of the
-          application so it is super importatnt to get right.
-        </p>
-        <h4>h4 header</h4>
-        <p>
-          p - long paragraph of p text just to test out font size and make
-          iterations to it. This will greatly affect the look and feel of the
-          application so it is super importatnt to get right.
-        </p>
-        <h5>h5 header</h5>
-        <p>
-          p - long paragraph of p text just to test out font size and make
-          iterations to it. This will greatly affect the look and feel of the
-          application so it is super importatnt to get right.
-        </p>
+        <Query query={LOAD_TODOS}>
+          {({ loading, error, data }) => {
+            if (loading) return 'Loading...';
+            if (error) return `Error! ${error.message}`;
+
+            return (
+              <div>
+                {data.todos.map(todo => (
+                  <Todo value={todo.value} id={todo.id} key={todo.id} />
+                ))}
+              </div>
+            );
+          }}
+        </Query>
       </Container>
     );
   }
