@@ -1,0 +1,5 @@
+type Mutation {
+  courseTopicUpdate(id: Int!, topic: String!): Course
+  todoAdd(id: Int, value: String): Todo
+  todoEdit(id: Int, value: String): Todo
+}

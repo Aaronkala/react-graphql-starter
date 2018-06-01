@@ -7,8 +7,7 @@
     "error": "webpack --display-error-details --mode development",
     "start": "node src/server/index.js",
     "build": "webpack --mode production",
-    "client":
-      "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -19,6 +18,7 @@
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
+    "graphql-import": "^0.6.0",
     "graphql-tag": "^2.9.2",
     "react": "^16.3.1",
     "react-apollo": "^2.1.4",

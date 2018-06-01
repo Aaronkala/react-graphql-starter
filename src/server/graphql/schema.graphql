@@ -1,0 +1,3 @@
+# import Query.* from "queries.graphql"
+# import Mutation.* from "mutations.graphql"
+# import * from "types.graphql"

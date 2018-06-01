@@ -1,5 +1,5 @@
-const { queries } = require('./rootQuery');
-const { mutations } = require('./rootMutation');
+const queries = require('./rootQuery');
+const mutations = require('./rootMutation');
 
 const root = {
   ...queries,
