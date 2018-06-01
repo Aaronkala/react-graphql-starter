@@ -19,6 +19,18 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(ttf)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'file-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {

@@ -1,4 +1,4 @@
 type Todo {
-  id: Int
+  id: ID
   value: String
 }

@@ -1,8 +1,11 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
+import './styles/globalStyles';
 
-import AddTodo from './components/addTodo';
+import Home from './pages/home';
 
 const client = new ApolloClient({
   uri: '/api',
@@ -11,10 +14,9 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        <h1>Start</h1>
-        <AddTodo />
-      </div>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
     </ApolloProvider>
   );
 }
