@@ -42,10 +42,16 @@ const theme = {
   },
   font: {
     heading: 'Open Sans',
-    body: 'Roboto',
+    body: 'Open Sans',
   },
   button: {
     radius: '0.5em',
+  },
+  breakpoints: {
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
   },
 };
 

@@ -7,7 +7,7 @@
     "error": "webpack --display-error-details --mode development",
     "start": "node src/server/index.js",
     "build": "webpack --mode production",
-    "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "client": "webpack-dev-server --hot --mode development",
     "server": "nodemon src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -26,6 +26,7 @@
     "react": "^16.3.1",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.3.1",
+    "react-hot-loader": "^4.2.0",
     "styled-components": "^3.3.0"
   },
   "devDependencies": {

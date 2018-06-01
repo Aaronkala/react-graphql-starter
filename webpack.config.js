@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const outputDirectory = 'build';
 
 module.exports = {
-  entry: './src/client/index.js',
+  entry: ['./src/client/index.js'],
   output: {
     path: path.join(__dirname, outputDirectory),
     filename: 'bundle.js',
@@ -39,6 +39,8 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
+    hot: true,
+    inline: true,
     proxy: {
       '/api': 'http://localhost:4000',
     },

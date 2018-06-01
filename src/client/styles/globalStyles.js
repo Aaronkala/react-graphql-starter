@@ -41,7 +41,7 @@ injectGlobal`
   h5 {
     font-family: ${theme.font.heading};
     color: ${theme.colors.text};
-    font-weight: 400;
+    font-weight: 300;
   }
 
   * {
@@ -49,9 +49,9 @@ injectGlobal`
   }
 
   body {
-    background-color: white;
+    background-color: ${theme.colors.background};
     font-family: ${theme.font.body}, serif;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.45;
     color: ${theme.colors.text};
   }
@@ -61,17 +61,21 @@ injectGlobal`
   }
   
   html {
-    font-size: 1.125em;
+    font-size: 1em;
+    @media screen and (min-width: ${theme.breakpoints.sm}) {
+
+    }
   }
 
   p {
     margin-bottom: 1.3em;
+    line-height: 1.5em;
   }
 
   h1, h2, h3, h4 {
     margin: 1.414em 0 0.5em;
     font-weight: inherit;
-    line-height: 1.2;
+    line-height: 1;
   }
 
   h1 {

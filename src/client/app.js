@@ -2,6 +2,7 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { ThemeProvider } from 'styled-components';
+import { hot } from 'react-hot-loader';
 import theme from './styles/theme';
 import './styles/globalStyles';
 
@@ -11,7 +12,7 @@ const client = new ApolloClient({
   uri: '/api',
 });
 
-export default function App() {
+function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
@@ -20,3 +21,5 @@ export default function App() {
     </ApolloProvider>
   );
 }
+
+export default hot(module)(App);
