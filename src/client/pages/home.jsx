@@ -22,5 +22,5 @@ export default class Home extends Component {
 
 const Container = styled.div`
   max-width: 400px;
-  margin: 0 auto;
+  margin: 2em auto 0;
 `;

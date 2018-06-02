@@ -1,38 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-export default class Checkbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: this.props.checked,
-    };
-  }
+const Checkbox = props => (
+  <Container>
+    <Input type="checkbox" checked={props.checked} onChange={props.callback} />
+    <Checkmark />
+  </Container>
+);
 
-  toggle = e => {
-    this.setState(
-      {
-        checked: !this.state.checked,
-      },
-      () => {
-        this.props.callback;
-      },
-    );
-  };
-
-  render() {
-    return (
-      <Container>
-        <Input
-          type="checkbox"
-          checked={this.state.checked}
-          onClick={this.toggle}
-        />
-        <Checkmark />
-      </Container>
-    );
-  }
-}
+Checkbox.propTypes = {
+  checked: PropTypes.bool.isRequired,
+  callback: PropTypes.func.isRequired,
+};
 
 const Container = styled.label`
   display: block;
@@ -83,3 +63,5 @@ const Checkmark = styled.span`
     transform: rotate(45deg);
   }
 `;
+
+export default Checkbox;

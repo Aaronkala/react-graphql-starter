@@ -55,7 +55,9 @@ injectGlobal`
     line-height: 1.45;
     color: ${theme.colors.text};
   }
-
+  input, button, label, span {
+    font-family: ${theme.font.body}, serif;
+  }
   button {
     color: ${theme.colors.textAlt};
   }

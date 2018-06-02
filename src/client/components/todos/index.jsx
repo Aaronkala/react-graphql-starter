@@ -9,6 +9,7 @@ const LOAD_TODOS = gql`
     todos {
       value
       id
+      done
     }
   }
 `;
@@ -21,7 +22,7 @@ export default class Todos extends Component {
   render() {
     return (
       <Container>
-        <Query query={LOAD_TODOS}>
+        <Query query={LOAD_TODOS} pollInterval={1500}>
           {({ loading, error, data }) => {
             if (loading) return 'Loading...';
             if (error) return `Error! ${error.message}`;
@@ -33,13 +34,14 @@ export default class Todos extends Component {
                     value={todo.value}
                     id={todo.id}
                     key={todo.id}
-                    done={true}
+                    done={todo.done}
                   />
                 ))}
               </div>
             );
           }}
         </Query>
+        <Todo value="" done={false} />
       </Container>
     );
   }

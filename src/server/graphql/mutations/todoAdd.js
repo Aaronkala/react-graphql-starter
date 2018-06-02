@@ -3,7 +3,7 @@ const Todos = require('../data/todoData');
 
 const todoAdd = ({ value }) => {
   const id = encrypt(Date.now());
-  Todos.push({ id, value });
+  Todos.push({ id, value, done: false });
   return { id, value };
 };
 
