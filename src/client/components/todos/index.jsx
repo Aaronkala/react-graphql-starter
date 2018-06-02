@@ -29,7 +29,12 @@ export default class Todos extends Component {
             return (
               <div>
                 {data.todos.map(todo => (
-                  <Todo value={todo.value} id={todo.id} key={todo.id} />
+                  <Todo
+                    value={todo.value}
+                    id={todo.id}
+                    key={todo.id}
+                    done={true}
+                  />
                 ))}
               </div>
             );

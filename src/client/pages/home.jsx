@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 import Header from '../components/header';
 import Todos from '../components/todos';
 
