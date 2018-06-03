@@ -1,10 +1,9 @@
 {
-  "name": "react-express-graphql",
+  "name": "react-graphql-starter",
   "version": "1.0.0",
   "description": "",
   "main": "src/server/index.js",
   "scripts": {
-    "error": "webpack --display-error-details --mode development",
     "start": "node src/server/index.js",
     "build": "webpack --mode production",
     "client": "webpack-dev-server --hot --mode development",
